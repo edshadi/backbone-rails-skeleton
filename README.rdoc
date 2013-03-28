@@ -1,0 +1,46 @@
+skelleton
+=========
+
+rails 3.2.1 skelleton with:
+- rename rake task to automatically rename skelleton to your appname
+- devise
+- twitter bootstrap
+- sass
+- haml
+- jquery
+- postgres
+- rspec
+- factory_girl
+- faker
+- tinymce
+- ruby-debug for ruby-1.9.3
+
+
+clone and use your own porject
+==============================
+clone:
+  clone https://github.com/edshadi/skelleton.git <YourProjectDirectory>
+  e.g. clone https://github.com/edshadi/skelleton.git ~/work/awesome
+
+cd into your project folder:
+  cd <YourProjectDirectory>
+rename your skelleton to be your appname:
+  rake rename["<ProjectName>"]
+  e.g. `rake rename["awesome"]
+
+remove any git configuration:
+  rm -rf .git
+
+initialize new .git repo:
+  git init
+  git add .
+  git commit -m"initial commit"
+
+create a github empty repo
+then run:
+  git remote add origin <GihubRepoAddress>
+  git push -u origin master
+
+To run the app:
+  rake db:create db:migrate
+  rails s

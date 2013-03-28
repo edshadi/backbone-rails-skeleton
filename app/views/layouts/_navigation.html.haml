@@ -1,0 +1,15 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand{:href => root_path} Backbone Rails
+      .nav-collapse
+        %ul.nav
+          %li
+            - if user_signed_in?
+              = link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'button'
+            - else
+              %a.button{:href => new_user_session_path} Login/Register
